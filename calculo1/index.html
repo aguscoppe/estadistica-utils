@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculo de Grados de Libertad</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstat/1.9.4/jstat.min.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="location.href='../index.html'">&#8592; Volver</button>
+    <h1>Calculo de Grados de Libertad</h1>
+    <form id="calcForm">
+      <label for="R">Valor de R:</label>
+      <input type="number" id="R" name="R" step="any" required />
+      <br />
+      <label for="alpha">Valor de α:</label>
+      <input type="number" id="alpha" name="alpha" step="any" required />
+      <br />
+      <label for="beta">Valor de β:</label>
+      <input type="number" id="beta" name="beta" step="any" required />
+      <br />
+      <button type="submit">Calcular</button>
+    </form>
+
+    <!-- Sección de resultados inicialmente oculta -->
+    <h2 class="hidden">Resultado:</h2>
+    <p class="hidden" id="result"></p>
+    <p class="hidden" id="roundedResult"></p>
+    <p class="hidden" id="tAlphaResult"></p>
+    <p class="hidden" id="tBetaResult"></p>
+  </body>
+</html>
