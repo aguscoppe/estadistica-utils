@@ -42,10 +42,26 @@ button:hover {
 }
 
 .button {
+  display: flex;
+  flex-direction: column;
   width: fit-content;
   padding: 10px 15px;
   background-color: #007bff;
   color: white;
   border: none;
   cursor: pointer;
+}
+
+.button img {
+  max-height: 120px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  width: 100%;
 }

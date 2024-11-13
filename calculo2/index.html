@@ -3,18 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Otro Cálculo</title>
+    <title>Chi-Square Calculator</title>
     <link rel="stylesheet" href="/styles.css" />
-    <script src="script.js" defer></script>
   </head>
   <body>
-    <button onclick="location.href='../index.html'">&#8592; Volver</button>
-    <h1>Otro Cálculo</h1>
-    <form id="anotherCalcForm">
-      <!-- Aquí puedes agregar campos específicos para el nuevo cálculo -->
-      <button type="submit">Calcular</button>
-    </form>
-    <h2>Resultado:</h2>
+    <h1>Chi-Square Calculator</h1>
+    <div class="input-group">
+      <label for="observed">Observed Frequencies (comma-separated):</label>
+      <input type="text" id="observed" placeholder="e.g. 20, 30, 25" />
+    </div>
+    <div class="input-group">
+      <label for="expected">Expected Frequencies (comma-separated):</label>
+      <input type="text" id="expected" placeholder="e.g. 25, 25, 25" />
+    </div>
+    <button onclick="calculateChiSquare()">Calculate Chi-Square</button>
+    <h2>Result</h2>
     <p id="result"></p>
+
+    <script src="chi_square.js"></script>
   </body>
 </html>
