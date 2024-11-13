@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelo Binomial</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Modelo Binomial</h1>
+    <form id="binomialForm">
+      <label for="n">Número de ensayos (n):</label>
+      <input type="number" id="n" name="n" required /><br /><br />
+      <label for="p">Probabilidad de éxito (p):</label>
+      <input type="number" step="0.01" id="p" name="p" required /><br /><br />
+      <label for="r">Número de éxitos (r):</label>
+      <input type="number" id="r" name="r" required /><br /><br />
+      <button type="submit">Calcular</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script src="binomial.js"></script>
+  </body>
+</html>
