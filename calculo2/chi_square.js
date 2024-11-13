@@ -23,5 +23,5 @@ function calculateChiSquare() {
   // Display the result
   document.getElementById(
     'result'
-  ).textContent = `Chi-Square Statistic: ${chiSquare.toFixed(2)}`;
+  ).textContent = `Chi-Square Statistic: ${chiSquare.toFixed(4)}`;
 }

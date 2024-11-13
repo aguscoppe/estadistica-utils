@@ -65,3 +65,29 @@ button:hover {
 .input-group label {
   width: 100%;
 }
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.button-group .button {
+  margin-right: 10px;
+}
+
+table,
+tr,
+th,
+td {
+  border: 1px solid black;
+}
+
+td input {
+  width: 100px;
+  margin: auto;
+  border: none;
+}
+
+button {
+  margin: 10px 0;
+}
