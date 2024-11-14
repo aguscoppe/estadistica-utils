@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calcular Tabla de Modelos</title>
+    <title>Calcular Parámetros de Modelos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <h1>Calcular Tabla de Modelos</h1>
+    <h1>Calcular Parámetros de Modelos</h1>
 
     <!-- Paso 1: Ingresar cantidad de filas -->
     <div id="step1">
@@ -18,7 +20,7 @@
 
     <!-- Paso 2: Mostrar tabla -->
     <div id="step2" style="display: none">
-      <table id="dataTable">
+      <table id="dataTable" border="1">
         <thead>
           <tr>
             <th>X (Rango)</th>
@@ -32,7 +34,7 @@
       <button onclick="calculateStats()">Calcular Estadísticas</button>
     </div>
 
-    <!-- Paso 3: Mostrar estadisticas -->
+    <!-- Paso 3: Mostrar estadísticas -->
     <div id="step3" style="display: none">
       <p>Promedio Muestral (x̄): <span id="mean"></span></p>
       <p>Desvío (S): <span id="stdDev"></span></p>

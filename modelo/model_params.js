@@ -153,24 +153,35 @@ function calculateGumbelMinParams(mean, stdDev) {
 }
 
 function calculateWeibullParams(mean, stdDev) {
-  // Cálculo del parámetro de forma (beta)
-  const beta = (stdDev / mean) * Math.sqrt(Math.PI / 2);
+  const gamma = math.gamma;
 
-  // Cálculo del parámetro de escala (omega)
-  const gamma = Math.gamma
-    ? Math.gamma
-    : function (z) {
-        // Función gamma aproximada
-        if (z === 0) return Infinity;
-        let g = 1;
-        for (let i = 1; i <= z; i++) {
-          g *= i;
-        }
-        return g;
-      };
-  const omega = mean / gamma(1 + 1 / beta); // Gamma(1 + 1/beta)
+  const equations = function (params) {
+    const omega = params[0];
+    const beta = params[1];
+    const eq1 = beta * gamma(1 + 1 / omega) - mean; // Ecuación de la media
+    const eq2 =
+      beta *
+        Math.sqrt(gamma(1 + 2 / omega) - Math.pow(gamma(1 + 1 / omega), 2)) -
+      stdDev; // Ecuación de la desviación estándar
+    return [eq1, eq2];
+  };
 
-  return { beta, omega };
+  const initial_guess = [1.5, mean]; // Suposiciones iniciales
+
+  try {
+    const solution = numeric.uncmin((params) => {
+      const res = equations(params);
+      return math.norm(res);
+    }, initial_guess).solution;
+
+    const omega = solution[0];
+    const beta = solution[1];
+
+    return { omega, beta };
+  } catch (error) {
+    console.error('Error al resolver el sistema de ecuaciones:', error);
+    return null;
+  }
 }
 
 function calculateLogNormalParams(mean, stdDev) {
