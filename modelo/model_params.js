@@ -9,16 +9,16 @@ function generateTable() {
     const row = tableBody.insertRow();
 
     const cellX = row.insertCell(0);
-    cellX.innerHTML = `<input type="number" step="0.01" class="xStart" required> - <input type="number" step="0.01" class="xEnd" required>`;
+    cellX.innerHTML = `<input type="number" step="0.000001" class="xStart" required> - <input type="number" step="0.000001" class="xEnd" required>`;
 
     const cellFOi = row.insertCell(1);
-    cellFOi.innerHTML = `<input type="number" step="0.01" class="foi" required>`;
+    cellFOi.innerHTML = `<input type="number" step="0.000001" class="foi" required>`;
 
     const cellPki = row.insertCell(2);
-    cellPki.innerHTML = `<input type="number" step="0.01" class="pki" required disabled>`;
+    cellPki.innerHTML = `<input type="number" step="0.000001" class="pki" required disabled>`;
 
     const cellFEi = row.insertCell(3);
-    cellFEi.innerHTML = `<input type="number" step="0.01" class="fei" readonly>`;
+    cellFEi.innerHTML = `<input type="number" step="0.000001" class="fei" readonly>`;
   }
 
   document.getElementById('step2').style.display = 'block';
